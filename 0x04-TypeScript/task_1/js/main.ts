@@ -37,6 +37,10 @@ export interface Teacher {
       this._lastName = lastName;
     }
   
+    workOnHomework(): string {
+      return "Currently working";
+    }
+  
     displayName(): string {
       return this._firstName;
     }
