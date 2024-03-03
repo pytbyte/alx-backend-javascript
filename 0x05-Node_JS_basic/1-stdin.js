@@ -1,5 +1,5 @@
 /**
- *reads frominput stream, printing the input 
+ *reads frominput stream, printing the input
  *at the end of the program run.
  */
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
