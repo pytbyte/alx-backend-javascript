@@ -1,14 +1,10 @@
 /**
  * Displays a message on the STDOUT.
- * @param {String} msg The message to display.
+ * @param {String} msg message displayed.
  */
-const displayMessage = (msg) => {
-    if (typeof msg !== 'string') {
-      console.error('Invalid input: msg must be a string');
-      return;
-    }
-    console.log(msg);
+const displayMessage = (str) => {
+    console.log(str);
   };
   
-  module.exports.displayMessage = displayMessage;
+  module.exports = displayMessage;
   
