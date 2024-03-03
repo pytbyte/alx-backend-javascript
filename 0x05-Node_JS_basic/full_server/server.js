@@ -1,14 +1,14 @@
+import routes from './routes';
+
 const express = require('express');
 
-const PORT = 1245;
 const app = express();
+const PORT = 1245;
 
-app.get('/', (_, res) => {
-  res.send('Hello Holberton School!');
-});
+app.use('/', routes);
 
 app.listen(PORT, () => {
-  console.log(`Server listening at port ${PORT}\n`);
+  console.log(`Server listening on port ${PORT}`);
 });
 
-module.exports = app;
+export default app;
