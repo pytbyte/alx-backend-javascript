@@ -1,44 +1,14 @@
-const fs = require('fs');
+const express = require('express');
 
-/**
- * Counts the students in a CSV data file.
- * @param {string} dataPath - The path to the CSV data file.
- * @throws {Error} Throws an error if the database cannot be loaded.
- */
-const countStudents = (dataPath) => {
-  try {
-    const fileContent = fs.readFileSync(dataPath, 'utf-8');
-    const lines = fileContent.trim().split('\n').slice(1);
-    const studentCounts = {};
+const PORT = 1245;
+const app = express();
 
-    lines.forEach((line) => {
-      const [firstName, , , field] = line.split(',');
-      const trimmedField = field.trim();
+app.get('/', (_, res) => {
+  res.send('Hello Holberton School!');
+});
 
-      if (trimmedField) {
-        if (!studentCounts[trimmedField]) {
-          studentCounts[trimmedField] = [];
-        }
-        studentCounts[trimmedField].push(firstName.trim());
-      }
-    });
+app.listen(PORT, () => {
+  console.log(`Server listening at port ${PORT}\n`);
+});
 
-    const totalStudents = Object.values(studentCounts).reduce(
-      (acc, curr) => acc + curr.length,
-      0,
-    );
-    console.log(`Number of students: ${totalStudents}`);
-
-    for (const [field, students] of Object.entries(studentCounts)) {
-      console.log(
-        `Number of students in ${field}: ${
-          students.length
-        }. List: ${students.join(', ')}`,
-      );
-    }
-  } catch (error) {
-    throw new Error('Cannot load the database');
-  }
-};
-
-module.exports = countStudents;
+module.exports = app;
