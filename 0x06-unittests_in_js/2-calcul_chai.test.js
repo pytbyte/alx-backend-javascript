@@ -1,23 +1,22 @@
-import calculateNumber from './2-calcul_chai';
-
 const { expect } = require('chai');
+const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber', () => {
-  describe('type is "SUM"', () => {
-    it('positive numbers', () => {
+  describe('type == "SUM"', () => {
+    it('equal positive numbers', () => {
       expect(calculateNumber('SUM', 2.0, 2.0)).to.equal(4);
     });
 
-    it('positive numbers (alternate)', () => {
-      expect(calculateNumber('SUM', 2.3, 3.8)).to.equal(6);
+    it('equal positive numbers (alternate)', () => {
+      expect(calculateNumber('SUM', 2.3, 1.8)).to.equal(4);
     });
 
-    it('negative numbers', () => {
-      expect(calculateNumber('SUM', -1.0, -2.3)).to.equal(-3);
+    it('equal negative numbers', () => {
+      expect(calculateNumber('SUM', -2.0, -2.0)).to.equal(-4);
     });
 
-    it('negative numbers (alternate)', () => {
-      expect(calculateNumber('SUM', -2.7, -1.8)).to.equal(-5);
+    it('equal negative numbers (alternate)', () => {
+      expect(calculateNumber('SUM', -2.3, -1.8)).to.equal(-4);
     });
 
     it('negative and positive numbers', () => {
@@ -33,20 +32,20 @@ describe('calculateNumber', () => {
     });
   });
 
-  describe('type is "SUBTRACT"', () => {
-    it('positive numbers', () => {
+  describe('type == "SUBTRACT"', () => {
+    it('equal positive numbers', () => {
       expect(calculateNumber('SUBTRACT', 2.0, 2.0)).to.equal(0);
     });
 
-    it('positive numbers (alternate)', () => {
+    it('equal positive numbers (alternate)', () => {
       expect(calculateNumber('SUBTRACT', 2.3, 1.8)).to.equal(0);
     });
 
-    it('negative numbers', () => {
+    it('equal negative numbers', () => {
       expect(calculateNumber('SUBTRACT', -2.0, -2.0)).to.equal(0);
     });
 
-    it('negative numbers (alternate)', () => {
+    it('equal negative numbers (alternate)', () => {
       expect(calculateNumber('SUBTRACT', -2.3, -1.8)).to.equal(0);
     });
 
@@ -63,7 +62,7 @@ describe('calculateNumber', () => {
     });
   });
 
-  describe('type is "DIVIDE"', () => {
+  describe('type == "DIVIDE"', () => {
     it('positive numbers', () => {
       expect(calculateNumber('DIVIDE', 8.0, 2.0)).to.equal(4.0);
     });
@@ -80,19 +79,19 @@ describe('calculateNumber', () => {
       expect(calculateNumber('DIVIDE', -7.0, -2.0)).to.equal(3.5);
     });
 
-    it('positive numbers', () => {
+    it('equal positive numbers', () => {
       expect(calculateNumber('DIVIDE', 2.0, 2.0)).to.equal(1);
     });
 
-    it('negative numbers', () => {
+    it('equal negative numbers', () => {
       expect(calculateNumber('DIVIDE', -2.0, -2.0)).to.equal(1);
     });
 
-    it('rounded up numbers', () => {
+    it('equal rounded up numbers', () => {
       expect(calculateNumber('DIVIDE', 2.6, 3.0)).to.equal(1);
     });
 
-    it('rounded down numbers', () => {
+    it('equal rounded down numbers', () => {
       expect(calculateNumber('DIVIDE', 2.4, 2.0)).to.equal(1);
     });
 
