@@ -18,7 +18,7 @@ describe('sendPaymentRequestToApi', () => {
     expect(consoleLogSpy.calledWith('The total is: 10')).to.be.true;
     expect(consoleLogSpy.callCount).to.equal(1);
 
-    // Clean up
+ 
     calculateNumberStub.restore();
     consoleLogSpy.restore();
   });

@@ -1,6 +1,5 @@
 import calculateNumber from './0-calcul';
-
-const assert = require('assert');
+import assert from 'assert';
 
 describe('calculateNumber function', () => {
   it('round two floating point whole numbers', () => {
